@@ -7,3 +7,7 @@ def clear_screen():
 
 clear_screen()
 
+_ = 10
+
+for item in range(_):
+    print(item+1)
