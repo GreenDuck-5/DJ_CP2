@@ -1,7 +1,6 @@
 #DJ, 1st, Financial Calculator
 import os
 
-
 def clear_screen():
     if os.name == 'nt': os.system('CLS')
     else: os.system('clear')
@@ -9,23 +8,17 @@ def clear_screen():
 #define function, com_int_calc():
 def com_int_calc():
     #starting_amount = user input: starting amount
-    starting_amount = input("Starting Amount: ")
+    starting_amount = int(input("Starting Amount: "))
     #interest_rate = user input: interest rate percent
     interest_rate = int(input("Interest Rate Percent: "))
-    #(interest_rate / 100) + interest rate = interest rate
-    interest_rate += interest_rate / 100
-    #years_compound = user input: years spent compunding
+    #years_compound = user input: years sepnt compounding
     years_compound = int(input("Years Spent Compounding: "))
-    #final amount = 0
-    final_amount = 0   
 
-    #for year in years_compound:
-    for year in range(years_compound):
-        #starting_amount * interest rate + final amount
-        final_amount += starting_amount * interest_rate
+    final_amount = starting_amount * (1 + ((interest_rate / 100)) \ years_compound)
 
     #print At the end ot {years_compound} you will have {final amount}
     print(f"At the end of {years_compound} years, you will have ${final_amount}")
+    exit = input("Press \"Enter\" to continue:\n")
     return
 
 #loop
@@ -44,7 +37,7 @@ while True:
         clear_screen()
         #Open compound interest calculator
         com_int_calc()
-        clear_screen
+        clear_screen()
         #restart loop
         continue
 
