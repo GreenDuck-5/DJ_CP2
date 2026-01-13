@@ -1,8 +1,6 @@
 #DJ, 1st, Financial Calculator
 import os
 import time
-
-def clear_screen(): os.system('CLS') if os.name == 'nt' else os.system('clear')
       
 #define function, com_int_calc():
 def com_int_calc():
@@ -69,66 +67,118 @@ def sale_price():
 
 #define function, tip calculator
 def tip_calc():
-    pass
+    #bill-amount = user input: waht is the orginal bill
+    bill_amount = float(input("What is the original bill amount?\n"))
+    #tip_percent = useer inopt: whtaw os the tip amount
+    tip_percent = float(input("What is the tip percentage?\n"))
+    #tip_amount = equation
+    tip_amount = float((tip_percent / 100) * bill_amount)
+    #print: the tip amount is {tip-ampount} and teh final bill is {bill_amount + tip_amoint}
+    print(f"The tip amount is ${tip_amount} and the final bill is ${bill_amount + tip_amount}")
+    input("Press \"Enter\" or \"Return\" to continue:\n")
+    return
 
 #define function, saving
 def saving_calc():
     #saving amount = user input: what amount are you saving ot
-    #time contributing = user input: how often are you contributing
-    #1. Weekly
-    #2. Monthly
-    pass
+    saving_amount = input("What amount are you saving to?\n")
+    #loop
+    while True:
+        #time contributing = user input: how often are you contributing
+        time_contributing = input("How often are you contributing:\n1.) Weekly\n2.) Monthly\n")
+        #1. Weekly
+        #2. Monthly
+        #if time_contrubuting = 1 or 2
+        if time_contributing == "1" or time_contributing == "2":
+            #break loop
+            break
+        #else
+        else:
+            #restart loop
+            print("Please enter valid input")
+            time.sleep(1)
+            continue
+    #amotung contributeds = user ijnput: how much are you contributing each time
+    amount_contributing = input("How much are you contributing each time?\n")
+    #if time_contributing = 1
+    contributions_needed = saving_amount / amount_contributing
+    if time_contributing == "1":
+        #legnth to save ofr weekly contributions
+        print(f"It will take {contributions_needed} weeks to reach your goal.")
+    #else if time_contributing = 2
+    if time_contributing == "2":
+        #length to save for monthly contributions
+        print(f"It will take {contributions_needed} months to reach your goal.")
+    input("Press \"Enter\" or \"Return\" to continue:\n")
+    return
 
-#loop
-while True:
-    #Input menu containing the options for the calculator:
-    option_one = input("1.) Compound Interest Calculator\n2.) Budget Allocater\n3.) Sale Price Calculator\n4.) Tip Calculator\n5.) Saving\n").strip()
-    #1.) Compound interest calculator
-    #2.) Budget Allocater
-    #3.) Sale Price Calculator
-    #4.) Tip Calculator
-    #5.) Saving
+#define function, menu
+def menu():
+    #loop:
+    while True:
+        #check what os the user is using, then clearing the screen based off that
+        def clear_screen(): os.system('CLS') if os.name == 'nt' else os.system('clear')
 
-    #if input is equal to 1
-    if option_one == "1":
-        clear_screen()
-        #Open compound interest calculator
-        com_int_calc()
-        clear_screen()
-        #restart loop
-        continue
+        #Input menu containing the options for the calculator:
+        option_one = input("1.) Compound Interest Calculator\n2.) Budget Allocater\n3.) Sale Price Calculator\n4.) Tip Calculator\n5.) Saving\n").strip()
+        #1.) Compound interest calculator
+        #2.) Budget Allocater
+        #3.) Sale Price Calculator
+        #4.) Tip Calculator
+        #5.) Saving
 
-    #else if input is equal to 2
-    elif option_one == "2":
-        clear_screen()
-        #open budget allocater
-        budget_all()
-        clear_screen()
-        #restart loop
-        continue
+        #if input is equal to 1
+        if option_one == "1":
+            clear_screen()
+            #Open compound interest calculator
+            com_int_calc()
+            clear_screen()
+            #restart loop
+            continue
 
-    #else if input is equal to 3
-    elif option_one == "3":
-        #open sale price calculator
-        clear_screen()
-        sale_price()
-        clear_screen()
-        #restart loop
-        continue
+        #else if input is equal to 2
+        elif option_one == "2":
+            clear_screen()
+            #open budget allocater
+            budget_all()
+            clear_screen()
+            #restart loop
+            continue
 
-    #else if input is equal to 4
-        #open tip calculator
-        #restart loop
+        #else if input is equal to 3
+        elif option_one == "3":
+            #open sale price calculator
+            clear_screen()
+            sale_price()
+            clear_screen()
+            #restart loop
+            continue
 
-    #else is input is equal to 5
-        #open savings calulator
-        #restart loop
+        #else if input is equal to 4
+        elif option_one == "4":
+            clear_screen()
+            tip_calc()
+            #open tip calculator
+            clear_screen()
+            #restart loop
+            continue
 
-    #else
-    else:
-        #ask user to enter valid input
-        print("Please enter valid input.")
-        time.sleep(1)
-        #restart loop
-        clear_screen()
-        continue
+        #else is input is equal to 5
+        elif option_one == "5":
+            clear_screen()
+            #open savings calulator
+            saving_calc()
+            clear_screen()
+            #restart loop
+            continue
+
+        #else
+        else:
+            #ask user to enter valid input
+            print("Please enter valid input.")
+            time.sleep(1)
+            #restart loop
+            clear_screen()
+            continue
+
+menu()
