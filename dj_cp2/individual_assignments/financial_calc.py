@@ -1,9 +1,7 @@
 #DJ, 1st, Financial Calculator
 import os
 
-def clear_screen():
-    if os.name == 'nt': os.system('CLS')
-    else: os.system('clear')
+def clear_screen(): os.system('CLS') if os.name == 'nt' else os.system('clear')
 
 #define function, com_int_calc():
 def com_int_calc():
@@ -14,12 +12,41 @@ def com_int_calc():
     #years_compound = user input: years sepnt compounding
     years_compound = int(input("Years Spent Compounding: "))
 
-    final_amount = starting_amount * (1 + ((interest_rate / 100)) \ years_compound)
+    final_amount = starting_amount * ((1 + (interest_rate / 100)) ** years_compound)
 
     #print At the end ot {years_compound} you will have {final amount}
     print(f"At the end of {years_compound} years, you will have ${final_amount}")
     exit = input("Press \"Enter\" to continue:\n")
     return
+
+#define function, budget allocater
+def budget_all():
+    #user input: how many budget catergories do you have
+    num_of_cat = input("How many budget catergories do you have?\n")
+    #for num in num_of_categories 
+
+#define function, sales price
+def sale_price():
+    #original_cost = user input: how much does the item originally cost
+    original_cost = float(input("How much does this item originally cost?\n"))
+    #discount_percent = user input: what percent is the discount
+    discount_percent = float(input("What percent is the discount?\n"))
+    #discount_perecemt /= 100
+    discount_percent /= 100
+    #final_price = original_cost * dicount_percent
+    final_price = original_cost * discount_percent
+    #print: the tiem now costs {final_price}
+    print(f"The item now costs ${final_price}")
+    exit = input("Press \"Enter\" to continue:\n")
+    return
+
+#define function, tip calculator
+def tip_calc():
+    pass
+
+#define function, saving
+def saving_calc():
+    pass
 
 #loop
 while True:
@@ -42,12 +69,17 @@ while True:
         continue
 
     #else if input is equal to 2
-        #open buget allocater
+        #open budget allocater
         #restart loop
 
     #else if input is equal to 3
+    elif option_one == "3":
         #open sale price calculator
+        clear_screen()
+        sale_price()
+        clear_screen()
         #restart loop
+        continue
 
     #else if input is equal to 4
         #open tip calculator
