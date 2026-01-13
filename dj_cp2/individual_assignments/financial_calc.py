@@ -22,9 +22,35 @@ def com_int_calc():
 
 #define function, budget allocater
 def budget_all():
-    #user input: how many budget catergories do you have
-    num_of_cat = input("How many budget catergories do you have?\n")
-    #for num in num_of_categories 
+    #num_categories = user input: how many budget categories do you have
+    num_categories = int(input("How many budget categories do you have: "))
+    
+    #nake empty lists for categories and percentages
+    categories = []
+    percentages = []
+
+    #ask for categories name for each categorie number, staritng at one
+    for i in range(1, num_categories + 1):
+        #category = user inout: categort {i}:
+        category = input(f"Category {i}: ")
+        #appened categorie to lost
+        categories.append(category)
+
+    #income = user input: waht is you montyhluy ijncome
+    income = float(input("What is your monthly income: "))
+
+    #assign each category a name by user coice
+    for category in categories:
+        percent = float(input(f"What percent is your {category}: "))
+        percentages.append(percent)
+
+    #assign category to percent
+    for category, percent in zip(categories, percentages):
+        amount = income * percent / 100
+        print(f"{category} is ${amount}")
+
+    input("Press \"Enter\" or \"Return\" to continue:\n")
+    return
 
 #define function, sales price
 def sale_price():
@@ -51,12 +77,10 @@ def saving_calc():
     #time contributing = user input: how often are you contributing
     #1. Weekly
     #2. Monthly
-    
     pass
 
 #loop
 while True:
-
     #Input menu containing the options for the calculator:
     option_one = input("1.) Compound Interest Calculator\n2.) Budget Allocater\n3.) Sale Price Calculator\n4.) Tip Calculator\n5.) Saving\n").strip()
     #1.) Compound interest calculator
@@ -75,8 +99,13 @@ while True:
         continue
 
     #else if input is equal to 2
+    elif option_one == "2":
+        clear_screen()
         #open budget allocater
+        budget_all()
+        clear_screen()
         #restart loop
+        continue
 
     #else if input is equal to 3
     elif option_one == "3":
