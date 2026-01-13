@@ -1,8 +1,9 @@
 #DJ, 1st, Financial Calculator
 import os
+import time
 
 def clear_screen(): os.system('CLS') if os.name == 'nt' else os.system('clear')
-
+      
 #define function, com_int_calc():
 def com_int_calc():
     #starting_amount = user input: starting amount
@@ -16,7 +17,7 @@ def com_int_calc():
 
     #print At the end ot {years_compound} you will have {final amount}
     print(f"At the end of {years_compound} years, you will have ${final_amount}")
-    exit = input("Press \"Enter\" to continue:\n")
+    input("Press \"Enter\" or \"Return\" to continue:\n")
     return
 
 #define function, budget allocater
@@ -34,10 +35,10 @@ def sale_price():
     #discount_perecemt /= 100
     discount_percent /= 100
     #final_price = original_cost * dicount_percent
-    final_price = original_cost * discount_percent
+    final_price = original_cost - (original_cost * discount_percent)
     #print: the tiem now costs {final_price}
     print(f"The item now costs ${final_price}")
-    exit = input("Press \"Enter\" to continue:\n")
+    input("Press \"Enter\" or \"Return\" to continue:\n")
     return
 
 #define function, tip calculator
@@ -46,13 +47,18 @@ def tip_calc():
 
 #define function, saving
 def saving_calc():
+    #saving amount = user input: what amount are you saving ot
+    #time contributing = user input: how often are you contributing
+    #1. Weekly
+    #2. Monthly
+    
     pass
 
 #loop
 while True:
 
     #Input menu containing the options for the calculator:
-    option_one = input("1.) Compound Interest Calculator\n2.) Budget Allocater\n3.) Sale Price Calculator\n4.) Tip Calculator\n5.) Saving\n")
+    option_one = input("1.) Compound Interest Calculator\n2.) Budget Allocater\n3.) Sale Price Calculator\n4.) Tip Calculator\n5.) Saving\n").strip()
     #1.) Compound interest calculator
     #2.) Budget Allocater
     #3.) Sale Price Calculator
@@ -90,5 +96,10 @@ while True:
         #restart loop
 
     #else
+    else:
         #ask user to enter valid input
+        print("Please enter valid input.")
+        time.sleep(1)
         #restart loop
+        clear_screen()
+        continue
