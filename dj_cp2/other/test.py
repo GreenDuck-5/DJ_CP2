@@ -1,5 +1,4 @@
-import os
-def clear_screen(): os.system('CLS') if os.name == 'nt' else os.system('clear')
+def clear_screen(): print("\033c", end="")
 
 clear_screen()
 
