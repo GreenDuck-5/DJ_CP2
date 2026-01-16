@@ -1,20 +1,21 @@
 #DJ, 1st, Personal Library
 
-#importing extr afunctions
+#importing extra functions
 import time as t
 
-#cclearing the screen
+#clearing the screen
 def clear_screen(): print("\033c", end="")
 
 #Letting user pick when to move on
 def continue_screen(): input("Press \"Enter\" or \"Return\" to continue:\n")
 
-#list with the 
+#dicitonary with the animals
 
-#intoroduce the user, give options of what to do: add, search, remove, view, exit
+#introduce the user, give options of what to do: add, search, remove, view, exit
 
 #if the user picks "add":
     #common_name = user input: what is the common name
-    #scientific_name = user inpout: whgat is the scienetic mname
-    #print: common name: comomn_name
+    #scientific_name = user input: what is the scientific mname
+    #print: common name: common_name
     #print: scientific name: scientific_name
+    #add common name and scientific name together
