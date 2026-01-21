@@ -103,6 +103,9 @@ def main():
         clear_screen()
         #give options of what to do: add, search, remove, view, introduce, exit
         to_do = input("Add, search, remove, view, introduce, exit:\n").lower().strip()
+
+        #list options to do
+        options_to_do = ("add", "search", "remove", "view", "introduce", "exit")
         
         #if the user picks "add":
         if to_do == "add":
