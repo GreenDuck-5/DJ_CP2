@@ -143,6 +143,8 @@ def search(movies):
             print("Enter at least two search criteria.")
             continue
 
+        clear_screen()
+
         results = filter_movies(movies, genre, director, actor, length_filter)
         print()
         show_list(results)
