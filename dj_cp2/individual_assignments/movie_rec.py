@@ -6,7 +6,7 @@ def clear_screen(): print("\033c", end = "")
 def load_movies():
     movies = []
     try:
-        with open("dj_cp2/individual_assignments/movies.csv", newline="", encoding="utf-8") as f:
+        with open("dj_cp2\individual_assignments\movies.csv", newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 try:
