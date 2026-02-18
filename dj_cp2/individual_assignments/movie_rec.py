@@ -54,6 +54,7 @@ def pick_movie(movies):
         clear_screen()
         show_details(movies[num-1])
         back = input("Press Enter to return: ")
+        break
 
 def filter_movies(movies, genre, director, actor, length_filter):
     results = []
