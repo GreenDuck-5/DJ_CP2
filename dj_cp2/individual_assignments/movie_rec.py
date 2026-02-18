@@ -51,6 +51,7 @@ def pick_movie(movies):
         if num < 1 or num > len(movies):
             print("Invalid choice.")
             continue
+        clear_screen()
         show_details(movies[num-1])
         back = input("Press Enter to return: ")
 
