@@ -1,2 +1,2 @@
-#####fractal generator
-###just run the file
+fractal generator
+just run the file
