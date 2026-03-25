@@ -2,7 +2,7 @@ import csv
 from helper import *
 def parse_accounts():
     # open the file so it will close automatically once we are done with it
-    with open("dj_cp2/individual_assignments/pet simulator/docs/pet_accounts.csv",mode="r",newline="") as pets:
+    with open("individual_assignments\pet simulator\docs\pet_accounts.csv",mode="r",newline="") as pets:
         # used for creating dictionaries
         fieldnames = ['owner','name','species','age','level','xp','hunger','happiness','energy','cleanliness','health','day','time','money','level','xp','agility','obedience','tracking','agility_progress','obedience_progress','tracking_progress','bed','toy','food','brush']
 
@@ -22,7 +22,7 @@ def parse_accounts():
 
 
 def save_accounts(pet_accounts):
-    with open("dj_cp2/individual_assignments/pet simulator/docs/pet_accounts.csv",mode="w",newline="") as pets:
+    with open("individual_assignments\pet simulator\docs\pet_accounts.csv",mode="w",newline="") as pets:
         # used for writing dictionaries
         fieldnames = ['owner','name','species','age','level','xp','hunger','happiness','energy','cleanliness','health','day','time','money','level','xp','agility','obedience','tracking','agility_progress','obedience_progress','tracking_progress','bed','toy','food','brush']
         dict_writer = csv.DictWriter(pets,fieldnames)
@@ -36,7 +36,7 @@ def save_accounts(pet_accounts):
             dict_writer.writerow(i)
 
 def add_pet(new_pet):
-    with open("dj_cp2/individual_assignments/pet simulator/docs/pet_accounts.csv",mode="a",newline="") as pets:
+    with open("individual_assignments\pet simulator\docs\pet_accounts.csv",mode="a",newline="") as pets:
         fieldnames = ['owner','name','species','age','level','xp','hunger','happiness','energy','cleanliness','health','day','time','money','level','xp','agility','obedience','tracking','agility_progress','obedience_progress','tracking_progress','bed','toy','food','brush']
         writer = csv.DictWriter(pets,fieldnames)
 
@@ -44,7 +44,7 @@ def add_pet(new_pet):
         writer.writerow(vars(new_pet))
 
 def remove_pet(pet_accounts,pet_name):
-    with open("dj_cp2/individual_assignments/pet simulator/docs/pet_accounts.csv",mode="w",newline="") as pets:
+    with open("individual_assignments\pet simulator\docs\pet_accounts.csv",mode="w",newline="") as pets:
         fieldnames = ['owner','name','species','age','level','xp','hunger','happiness','energy','cleanliness','health','day','time','money','level','xp','agility','obedience','tracking','agility_progress','obedience_progress','tracking_progress','bed','toy','food','brush']
         dict_writer = csv.DictWriter(pets,fieldnames)
         writer = csv.writer(pets)
