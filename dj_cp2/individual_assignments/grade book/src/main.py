@@ -1,5 +1,7 @@
 # DJ, 1st, Grade Book
 
-from user_interface import *
+# get main function from user_interface
+from user_interface import main_interface 
 
-main_menu
+# run main function
+main_interface()
