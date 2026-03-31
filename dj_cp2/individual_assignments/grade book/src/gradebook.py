@@ -275,7 +275,7 @@ class Gradebook():
     # method for saving gradebook catalog
     def save_students(self):
         # use with open to make sure the file closes automatically
-        with open("documents/students.csv",mode="w",newline="") as students:
+        with open("dj_cp2/individual_assignments/grade book/docs/students.csv",mode="w",newline="") as students:
             fieldnames = ['name','id','academic_standing','grade_level','grade1','grade2','grade3','grade4','grade5','grade6','grade7','grade8','average']
             writer = csv.DictWriter(students,fieldnames)
             basic_writer = csv.writer(students)
