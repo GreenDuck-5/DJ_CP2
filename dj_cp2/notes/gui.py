@@ -18,21 +18,21 @@ root.title("Testing")
 root.configure(background = "mediumaquamarine")
 root.minsize(250, 250)
 root.geometry("300x300+100+100")
-label = tk.Label(root, text = "This is currently working!", font = ("Times New Roman", 14))
-label.config(fg = "black")
-label.config(background = "mediumaquamarine")
-label.pack()
+
 
 
 #How do I make a clickable button?
 root.count = 0
 def add():
     root.count += 1
-    tk.Label(root, text = root.count).pack()
+    num["text"] = root.count
+
     
 button = tk.Button(root, text = "ADD", command = add)
 button.pack()
 
+num = tk.Label(root, text = 0)
+num.pack()
 
 
 #How do you show and hide widgets? 
