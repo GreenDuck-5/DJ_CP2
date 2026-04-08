@@ -37,7 +37,8 @@ num.pack()
 
 #How do you show and hide widgets? 
 
-
+num = tk.Label(root, text = 0)
+num.pack()
 
 
 root.mainloop()
